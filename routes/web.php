@@ -27,7 +27,7 @@ Route::get('/veiculo/{id}/{titulo?}',['as' =>'site.veiculo', function(){
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function (){
 
-    Route::get('home',['as' => 'home','uses' => 'AdminHomeController@index']);
+    Route::get('/',['as' => 'home','uses' => 'AdminHomeController@index']);
 
     Route::get('categories',['as' => 'categories.index', 'uses' => 'CategoriesController@index']);
     Route::get('categories/create',['as' => 'categories.create', 'uses' => 'CategoriesController@create']);

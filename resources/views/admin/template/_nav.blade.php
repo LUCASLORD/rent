@@ -27,9 +27,9 @@
     <li>
         <div class="user-view">
             <div class="background">
-                <img src="{{asset('img/modelo_slide_1.jpg')}}">
+                <img src="{{asset('img/slides/modelo_slide_1.jpg')}}">
             </div>
-            <a href="#user"><img class="circle" src="{{asset('img/modelo_slide_1.jpg')}}"></a>
+            <a href="#user"><img class="circle" src="{{asset('img/slides/modelo_slide_1.jpg')}}"></a>
             <a href="#name"><span class="black-text name">{{ Auth::user()->name }}</span></a>
             <a href="#email"><span class="black-text email">{{ Auth::user()->email }}</span></a>
         </div>
