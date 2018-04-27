@@ -35,4 +35,16 @@ class User extends Authenticatable implements Transformable
 
         return $this->hasOne(Client::class);
     }
+
+    public function rent()
+    {
+
+        return $this->belongsTo(Rent::class);
+    }
+
+    public function reserve()
+    {
+
+        return $this->belongsTo(Reserve::class);
+    }
 }

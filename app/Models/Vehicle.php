@@ -44,4 +44,14 @@ class Vehicle extends Model implements Transformable
         return $this->hasMany(Image::class);
     }
 
+    public function rent()
+    {
+        return $this->belongsTo(RentItems::class);
+    }
+
+    public function reserve()
+    {
+        return $this->belongsTo(Reserveitems::class);
+    }
+
 }

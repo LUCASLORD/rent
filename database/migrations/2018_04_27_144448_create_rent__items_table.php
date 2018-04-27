@@ -17,6 +17,11 @@ class CreateRentItemsTable extends Migration
 	{
 		Schema::create('rent__items', function(Blueprint $table) {
             $table->increments('id');
+            $table->integer('rent_id')->unsigned();
+            $table->foreign('rent_id')->references('id')->on('rents');
+            $table->integer('vehicle_id')->unsigned();
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->float('price');
 
             $table->timestamps();
 		});

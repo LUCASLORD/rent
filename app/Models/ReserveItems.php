@@ -20,6 +20,19 @@ class ReserveItems extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'reserve_id',
+        'vehicle_id'
+    ];
+
+    public function reserve()
+    {
+        return $this->belongsTo(Reserve::class);
+    }
+
+    public function vehicle()
+    {
+        return $this->hasMany(Vehicle::class);
+    }
 
 }

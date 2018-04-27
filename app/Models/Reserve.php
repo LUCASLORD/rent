@@ -20,6 +20,18 @@ class Reserve extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'user_id',
+        'data_reserve'
+    ];
 
+    public function items()
+    {
+        return $this->hasMany(ReserveItems::class);
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

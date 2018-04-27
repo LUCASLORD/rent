@@ -17,6 +17,10 @@ class CreateReserveItemsTable extends Migration
 	{
 		Schema::create('reserve__items', function(Blueprint $table) {
             $table->increments('id');
+            $table->integer('reserve_id')->unsigned();
+            $table->foreign('reserve_id')->references('id')->on('reserves');
+            $table->integer('vehicle_id')->unsigned();
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
 
             $table->timestamps();
 		});

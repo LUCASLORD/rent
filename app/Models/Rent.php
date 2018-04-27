@@ -20,6 +20,20 @@ class Rent extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'user_id',
+        'discount',
+        'total_price',
+        'status'
+    ];
 
+    public function items()
+    {
+        return $this->hasMany(RentItems::class);
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

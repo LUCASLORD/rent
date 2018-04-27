@@ -9,7 +9,18 @@
 namespace Locadora\Http\Controllers;
 
 
-class RentsController
+use Locadora\Repositories\RentRepository;
+
+class RentsController extends Controller
 {
 
+    /**
+     * @var RentRepository
+     */
+    private $repository;
+
+    public function __construct(RentRepository $repository)
+    {
+        $this->repository = $repository;
+    }
 }
