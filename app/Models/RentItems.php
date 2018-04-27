@@ -7,11 +7,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Leasing.
+ * Class RentItems.
  *
  * @package namespace Locadora\Models;
  */
-class Leasing extends Model implements Transformable
+class RentItems extends Model implements Transformable
 {
     use TransformableTrait;
 

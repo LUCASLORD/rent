@@ -4,9 +4,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * Class CreateLeasingsTable.
+ * Class CreateRentItemsTable.
  */
-class CreateLeasingsTable extends Migration
+class CreateRentItemsTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -15,7 +15,7 @@ class CreateLeasingsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('leasings', function(Blueprint $table) {
+		Schema::create('rent__items', function(Blueprint $table) {
             $table->increments('id');
 
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateLeasingsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('leasings');
+		Schema::drop('rent__items');
 	}
 }

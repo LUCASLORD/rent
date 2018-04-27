@@ -4,16 +4,16 @@ namespace Locadora\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Locadora\Repositories\LeasingRepository;
-use Locadora\Models\Leasing;
-use Locadora\Validators\LeasingValidator;
+use Locadora\Repositories\RentRepository;
+use Locadora\Models\Rent;
+use Locadora\Validators\RentValidator;
 
 /**
- * Class LeasingRepositoryEloquent.
+ * Class RentRepositoryEloquent.
  *
  * @package namespace Locadora\Repositories;
  */
-class LeasingRepositoryEloquent extends BaseRepository implements LeasingRepository
+class RentRepositoryEloquent extends BaseRepository implements RentRepository
 {
     /**
      * Specify Model class name
@@ -22,7 +22,7 @@ class LeasingRepositoryEloquent extends BaseRepository implements LeasingReposit
      */
     public function model()
     {
-        return Leasing::class;
+        return Rent::class;
     }
 
     

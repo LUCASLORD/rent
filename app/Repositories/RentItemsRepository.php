@@ -5,11 +5,11 @@ namespace Locadora\Repositories;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Interface LeasingRepository.
+ * Interface RentItemsRepository.
  *
  * @package namespace Locadora\Repositories;
  */
-interface LeasingRepository extends RepositoryInterface
+interface RentItemsRepository extends RepositoryInterface
 {
     //
 }
