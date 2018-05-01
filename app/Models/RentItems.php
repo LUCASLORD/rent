@@ -22,7 +22,8 @@ class RentItems extends Model implements Transformable
      */
     protected $fillable = [
         'rent_id',
-        'vehicle_id'
+        'vehicle_id',
+        'price'
     ];
 
     public function rent()
@@ -32,6 +33,6 @@ class RentItems extends Model implements Transformable
 
     public function vehicle()
     {
-        return $this->hasMany(Vehicle::class);
+        return $this->hasMany(Vehicle::class, 'id', 'rent_id');
     }
 }

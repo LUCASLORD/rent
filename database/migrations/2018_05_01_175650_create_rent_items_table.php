@@ -8,14 +8,14 @@ use Illuminate\Database\Migrations\Migration;
  */
 class CreateRentItemsTable extends Migration
 {
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('rent__items', function(Blueprint $table) {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('rent_items', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('rent_id')->unsigned();
             $table->foreign('rent_id')->references('id')->on('rents');
@@ -24,16 +24,16 @@ class CreateRentItemsTable extends Migration
             $table->float('price');
 
             $table->timestamps();
-		});
-	}
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('rent__items');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('rent__items');
+    }
 }

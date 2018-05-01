@@ -73,16 +73,18 @@ $factory->define(Locadora\Models\Image::class, function (Faker $faker) {
 
 });
 
-$factory->define(Locadora\Models\Image::class, function (Faker $faker) {
+$factory->define(Locadora\Models\Rent::class, function (Faker $faker) {
 
     return [
-      'name' => 'DEV',
+        'user_id' => rand(3,10),
+        'discount' => 0,
+        'total_price' => 0,
+        'status' => 0
     ];
 });
 
-$factory->define(Locadora\Models\Image::class, function (Faker $faker) {
+$factory->define(Locadora\Models\RentItems::class, function (Faker $faker) {
 
     return [
-        'name' => 'ALL',
     ];
 });

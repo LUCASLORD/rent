@@ -47,6 +47,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
     Route::post('clients/update/{id}',['as' => 'clients.update', 'uses' => 'ClientsController@update']);
     Route::post('clients/store',['as' => 'clients.store', 'uses' => 'ClientsController@store']);
 
+    Route::get('rents',['as' => 'rents.index', 'uses' => 'RentsController@index']);
+    Route::get('rents/create',['as' => 'rents.create', 'uses' => 'RentsController@create']);
+    Route::get('rents/edit/{id}',['as' => 'rents.edit', 'uses' => 'RentsController@edit']);
+    Route::post('rents/update/{id}',['as' => 'rents.update', 'uses' => 'RentsController@update']);
+    Route::post('rents/store',['as' => 'rents.store', 'uses' => 'RentsController@store']);
+
 });
 
 Auth::routes();

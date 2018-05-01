@@ -23,4 +23,11 @@ class RentsController extends Controller
     {
         $this->repository = $repository;
     }
+
+    public function index()
+    {
+        $rents = $this->repository->paginate(5);
+
+        return view('admin.rents.index', compact('rents'));
+    }
 }

@@ -15,7 +15,7 @@ class CreateReserveItemsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('reserve__items', function(Blueprint $table) {
+		Schema::create('reserve_items', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('reserve_id')->unsigned();
             $table->foreign('reserve_id')->references('id')->on('reserves');

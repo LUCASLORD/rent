@@ -23,7 +23,7 @@ class CheckRole
 
         if(Auth::user()->role <> 'DEV')
         {
-            return redirect('/home');
+            return redirect('/');
         }
         return $next($request);
     }

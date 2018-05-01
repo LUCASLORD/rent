@@ -40,7 +40,7 @@
     <li><a href="{{route('admin.clients.index')}}"><i class="material-icons">person</i>Clients</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a href="{{route('admin.rents.index')}}"><i class="material-icons">menu</i>Locações</a></li>
     <li><div class="divider"></div></li>
     <div class="user-view"></div>
     <div class="user-view"></div>

@@ -48,5 +48,10 @@ class RepositoryServiceProvider extends ServiceProvider
             'Locadora\Repositories\ImageRepositoryEloquent'
         );
 
+        $this->app->bind(
+            'Locadora\Repositories\RentRepository',
+            'Locadora\Repositories\RentRepositoryEloquent'
+        );
+
     }
 }
