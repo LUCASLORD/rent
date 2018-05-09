@@ -30,4 +30,14 @@ class RentsController extends Controller
 
         return view('admin.rents.index', compact('rents'));
     }
+
+    public function edit($id)
+    {
+        $list_status = [0 => 'Pendente',
+                        1=> 'Pago',
+                        2=> 'Cancelado'];
+        $rent = $this->repository->find($id);
+
+        return view('admin.rents.edit', compact('rent','list_status'));
+    }
 }

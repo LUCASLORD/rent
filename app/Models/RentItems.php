@@ -33,6 +33,6 @@ class RentItems extends Model implements Transformable
 
     public function vehicle()
     {
-        return $this->hasMany(Vehicle::class, 'id', 'rent_id');
+        return $this->belongsTo(Vehicle::class, 'id', 'id');
     }
 }

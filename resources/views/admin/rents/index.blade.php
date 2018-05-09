@@ -9,7 +9,11 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>NOME</th>
+                <th>Preço</th>
+                <th>Desconto</th>
+                <th>data</th>
+                <th>Itens</th>
+                <th>Status</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -18,7 +22,17 @@
             @foreach( $rents as $rent )
                 <tr>
                     <td>{{$rent->id}}</td>
-                    <td>{{$rent->name}}</td>
+                    <td>{{$rent->total_price}}</td>
+                    <td>{{$rent->discount}}</td>
+                    <td>{{$rent->created_at}}</td>
+                    <td>
+                        <ul>
+                        @foreach($rent->items as $item)
+                            <li>{{$item->vehicle->model}}</li>
+                        @endforeach
+                        </ul>
+                    </td>
+                    <td>{{$rent->status}}</td>
                     <td>
                         <a href="{{route('admin.rents.edit',['id'=>$rent->id])}}" class="btn btn-small">
                             Editar
