@@ -2,7 +2,7 @@
 
 namespace Locadora\Http\Controllers\Auth;
 
-use Locadora\User;
+use Locadora\Models\User;
 use Locadora\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;

@@ -40,15 +40,18 @@
                             </label>
                         </div>
                         <div class="row s6">
-                            <div class="col s6">
+                            <div class="col m4">
                                 <button type="submit" class="btn btn-small">
                                     {{ __('Login') }}
                                 </button>
                             </div>
-                            <div class="col s6">
+                            <div class="col m4">
                                 <a class="btn btn-small yellow red-text text" href="{{ route('password.request') }}">
                                     {{ __('senha?') }}
                                 </a>
+                            </div>
+                            <div class="col m4">
+                                <a class="btn btn-small" href="{{ route('register') }}">Registrar</a>
                             </div>
                         </div>
 

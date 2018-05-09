@@ -25,6 +25,11 @@ Route::get('/veiculo/{id}/{titulo?}',['as' =>'site.veiculo', function(){
     return view('site.veiculo');
 }]);
 
+Route::group(['prefix' => 'customer', 'as' =>'customer.'], function(){
+
+    Route::get('rent/create', ['as' => 'rent.create', 'uses' => 'CheckoutController@create']);
+});
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function (){
 
     Route::get('/',['as' => 'home','uses' => 'AdminHomeController@index']);
@@ -52,7 +57,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
     Route::get('rents/edit/{id}',['as' => 'rents.edit', 'uses' => 'RentsController@edit']);
     Route::post('rents/update/{id}',['as' => 'rents.update', 'uses' => 'RentsController@update']);
     Route::post('rents/store',['as' => 'rents.store', 'uses' => 'RentsController@store']);
+});
 
+Route::get('admin/login',['as' => 'admin.login'], function (){
 });
 
 Auth::routes();
