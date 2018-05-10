@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
     <ul class="pagination">
-        {{-- Previous Page Link --}}
+        {{-- Previous PageTableSeeder Link --}}
         @if ($paginator->onFirstPage())
             <li class="disabled"><i class="material-icons">chevron_left</i></li>
         @else
@@ -26,7 +26,7 @@
             @endif
         @endforeach
 
-        {{-- Next Page Link --}}
+        {{-- Next PageTableSeeder Link --}}
         @if ($paginator->hasMorePages())
             <li class="waves-effect"><a href="{{ $paginator->nextPageUrl() }}" rel="next">&rsaquo;</a></li>
         @else

@@ -88,3 +88,13 @@ $factory->define(Locadora\Models\RentItems::class, function (Faker $faker) {
     return [
     ];
 });
+
+$factory->define(\Locadora\Models\Page::class, function (){
+    return[
+        'title' => 'A Empresa',
+        'description' => 'Descrição breve da empresa',
+        'text' => 'texto aqui',
+        'image' => 'http://localhost:8000/img/carro.jpg',
+        'type' => 'sobre'
+    ];
+});

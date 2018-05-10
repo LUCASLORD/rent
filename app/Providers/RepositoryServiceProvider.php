@@ -34,6 +34,35 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            'Locadora\Repositories\ImageRepository',
+            'Locadora\Repositories\ImageRepositoryEloquent'
+        );
+
+        $this->app->bind(
+            'Locadora\Repositories\PageRepository',
+            'Locadora\Repositories\PageRepositoryEloquent'
+        );
+
+        $this->app->bind(
+            'Locadora\Repositories\RentItemsRepository',
+            'Locadora\Repositories\RentItemsRepositoryEloquent'
+        );
+
+        $this->app->bind(
+            'Locadora\Repositories\RentRepository',
+            'Locadora\Repositories\RentRepositoryEloquent'
+        );
+
+        $this->app->bind(
+            'Locadora\Repositories\ReserveItemsRepository',
+            'Locadora\Repositories\ReserveItemsRepositoryEloquent'
+        );
+
+        $this->app->bind(
+            'Locadora\Repositories\ReserveRepository',
+            'Locadora\Repositories\ReserveRepositoryEloquent'
+        );
+        $this->app->bind(
             'Locadora\Repositories\UserRepository',
             'Locadora\Repositories\UserRepositoryEloquent'
         );
@@ -43,15 +72,8 @@ class RepositoryServiceProvider extends ServiceProvider
             'Locadora\Repositories\VehicleRepositoryEloquent'
         );
 
-        $this->app->bind(
-            'Locadora\Repositories\ImageRepository',
-            'Locadora\Repositories\ImageRepositoryEloquent'
-        );
 
-        $this->app->bind(
-            'Locadora\Repositories\RentRepository',
-            'Locadora\Repositories\RentRepositoryEloquent'
-        );
+
 
     }
 }

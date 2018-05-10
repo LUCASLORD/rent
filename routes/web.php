@@ -14,16 +14,17 @@
 Route::get('/',['as' =>'site.home', function(){
     return view('site.home');
 }]);
-Route::get('/sobre',['as' =>'site.sobre', function(){
-    return view('site.sobre');
-}]);
-Route::get('/contato',['as' =>'site.contato', function(){
-    return view('site.contato');
-}]);
-//o ? deixa o titulo como opcional
-Route::get('/veiculo/{id}/{titulo?}',['as' =>'site.veiculo', function(){
-    return view('site.veiculo');
-}]);
+
+
+Route::group(['prefix' => 'site', 'as' => 'site.'], function(){
+
+    Route::get('about',['as' =>'about', 'uses' => 'Site\PagesController@about']);
+    Route::get('contact',['as' =>'contact', 'uses' => 'Site\PagesController@contact']);
+
+    //o ? deixa o titulo como opcional
+    Route::get('vehicle/{id}/{titulo?}', ['as' => 'vehicle', 'uses' => 'Site\PagesController@vehicle']);
+});
+
 
 Route::group(['prefix' => 'customer', 'as' =>'customer.'], function(){
 
@@ -59,8 +60,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
     Route::post('rents/store',['as' => 'rents.store', 'uses' => 'RentsController@store']);
 });
 
-Route::get('admin/login',['as' => 'admin.login'], function (){
-});
 
 Auth::routes();
 

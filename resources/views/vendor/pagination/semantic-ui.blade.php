@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
     <div class="ui pagination menu">
-        {{-- Previous Page Link --}}
+        {{-- Previous PageTableSeeder Link --}}
         @if ($paginator->onFirstPage())
             <a class="icon item disabled"> <i class="left chevron icon"></i> </a>
         @else
@@ -26,7 +26,7 @@
             @endif
         @endforeach
 
-        {{-- Next Page Link --}}
+        {{-- Next PageTableSeeder Link --}}
         @if ($paginator->hasMorePages())
             <a class="icon item" href="{{ $paginator->nextPageUrl() }}" rel="next"> <i class="right chevron icon"></i> </a>
         @else
