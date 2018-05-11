@@ -18,7 +18,7 @@
                     <p>R${{$vehicle->price}}</p>
                 </div>
                 <div class="card-action">
-                    <a href="">Ver Mais</a>
+                    <a href="{{route('site.vehicle',['id'=>$vehicle->id])}}">Ver Mais</a>
                 </div>
             </div>
         </div>

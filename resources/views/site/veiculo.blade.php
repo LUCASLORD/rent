@@ -1,10 +1,9 @@
 @extends('layouts.loca')
 
 @section('content')
-
     <div class="container">
         <div class="row section">
-            <h3 align="center">Veiculo</h3>
+            <h3 align="center">{{$vehicle->model}}</h3>
             <div class="divider"></div>
         </div>
         <div class="row section">
@@ -42,11 +41,11 @@
                 </div>
             </div>
             <div class="col s12 m4">
-                <h4>Titulo do carro</h4>
+                <h4>{{$vehicle->category->name}}</h4>
                 <blockquote>
                     Descrição sobre carro
                 </blockquote>
-                <p><b>codigo</b> 245</p>
+                <p><b>código</b> {{$vehicle->id}}</p>
             </div>
         </div>
 

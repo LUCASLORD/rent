@@ -28,4 +28,11 @@ class VehicleService
 
         return $dados;
     }
+
+    public function find($id)
+    {
+        $vehicle = $this->vehicleRepository->find($id);
+
+        return $vehicle;
+    }
 }

@@ -27,7 +27,7 @@ class PagesController extends Controller
     public function index()
     {
         $vehicles = $this->vehicleService->listVehicles();
-        
+
         return view('site.home', compact('vehicles'));
     }
     public function about()
@@ -44,8 +44,9 @@ class PagesController extends Controller
     }
 
 
-    public function vehicle()
+    public function vehicle($id)
     {
-        return view('site.veiculo');
+        $vehicle = $this->vehicleService->find($id);
+        return view('site.veiculo', compact('vehicle'));
     }
 }

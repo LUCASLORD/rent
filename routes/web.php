@@ -12,13 +12,10 @@
 */
 
 Route::get('/',['as' =>'site.home', 'uses' => 'Site\PagesController@index']);
-
-
 Route::group(['prefix' => 'site', 'as' => 'site.'], function(){
 
     Route::get('about',['as' =>'about', 'uses' => 'Site\PagesController@about']);
     Route::get('contact',['as' =>'contact', 'uses' => 'Site\PagesController@contact']);
-
     //o ? deixa o titulo como opcional
     Route::get('vehicle/{id}/{titulo?}', ['as' => 'vehicle', 'uses' => 'Site\PagesController@vehicle']);
 });
@@ -26,7 +23,7 @@ Route::group(['prefix' => 'site', 'as' => 'site.'], function(){
 
 Route::group(['prefix' => 'customer', 'as' =>'customer.'], function(){
 
-    Route::get('rent/create', ['as' => 'rent.create', 'uses' => 'CheckoutController@create']);
+    Route::get('rent/create', ['as' => 'rent.create', 'uses' => 'Site\CheckoutController@create']);
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function (){
@@ -62,7 +59,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
     Route::put('pages/update/{id}', ['as' => 'pages.update', 'uses' => 'PagesController@update']);
 });
 
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
