@@ -4,9 +4,6 @@
             <a href="#!" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Home</a></li>
-                <li><a href="badges.html">Sobre</a></li>
-                <li><a href="collapsible.html">Contato</a></li>
                 <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -38,11 +35,11 @@
     <li><a href="{{route('admin.categories.index')}}"><i class="material-icons">class</i>Categorias</a></li>
     <li><a href="{{route('admin.vehicles.index')}}"><i class="material-icons">directions_car</i>Veìculos</a></li>
     <li><a href="{{route('admin.clients.index')}}"><i class="material-icons">person</i>Clients</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
     <li><a href="{{route('admin.rents.index')}}"><i class="material-icons">menu</i>Locações</a></li>
     <li><div class="divider"></div></li>
-    <div class="user-view"></div>
+    <li><a class="subheader">Site</a></li>
+    <li><a href="{{route('admin.pages.index')}}"><i class="material-icons">menu</i>Paginas</a></li>
+    <li><div class="divider"></div></li>
     <div class="user-view"></div>
     <li><a class="subheader black-text"><i class="material-icons black-text">FALCOLABS</i></a></li>
 </ul>

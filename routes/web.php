@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/',['as' =>'site.home', function(){
-    return view('site.home');
-}]);
+Route::get('/',['as' =>'site.home', 'uses' => 'Site\PagesController@index']);
 
 
 Route::group(['prefix' => 'site', 'as' => 'site.'], function(){
@@ -33,7 +31,7 @@ Route::group(['prefix' => 'customer', 'as' =>'customer.'], function(){
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function (){
 
-    Route::get('/',['as' => 'home','uses' => 'AdminHomeController@index']);
+    Route::get('home',['as' => 'home','uses' => 'AdminHomeController@index']);
 
     Route::get('categories',['as' => 'categories.index', 'uses' => 'CategoriesController@index']);
     Route::get('categories/create',['as' => 'categories.create', 'uses' => 'CategoriesController@create']);
@@ -58,6 +56,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
     Route::get('rents/edit/{id}',['as' => 'rents.edit', 'uses' => 'RentsController@edit']);
     Route::post('rents/update/{id}',['as' => 'rents.update', 'uses' => 'RentsController@update']);
     Route::post('rents/store',['as' => 'rents.store', 'uses' => 'RentsController@store']);
+
+    Route::get('pages', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
+    Route::get('pages/edit/{id}', ['as' => 'pages.edit', 'uses' => 'PagesController@edit']);
+    Route::put('pages/update/{id}', ['as' => 'pages.update', 'uses' => 'PagesController@update']);
 });
 
 
